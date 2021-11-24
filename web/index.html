@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="eel.js"></script>
+</head>
+<body>
+	
+	<div class="box">
+		<form action="#">
+			<input type="text" id="login" placeholder="Login">
+			<input type="password" id="password" placeholder="Password">
+			<input type="submit" id="btn" value="Register">
+		</form>
+	</div>
+
+	<script>
+		let btn = document.querySelector("#btn");
+		btn.addEventListener("click", sendData);
+
+		async function sendData() {
+			let login = document.querySelector("#login").value;
+			let password = document.querySelector("#password").value;
+
+			await eel.recv_data(login, password);
+		}
+	</script>
+
+</body>
+</html>
